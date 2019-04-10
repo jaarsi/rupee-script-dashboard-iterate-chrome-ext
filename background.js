@@ -19,7 +19,7 @@ const DASHBOARD_ITALY = {
 //      60000   = 1 minuto      (padrão)
 //      300000  = 5 minutos
 //      600000  = 10 minutos
-const CHANGE_PAGE_RATE = 3000;
+const CHANGE_PAGE_RATE = 60000;
 
 // Função principal, a que de fato o loop pelos dashboards;
 var main = loop_over_pages(CHANGE_PAGE_RATE);
