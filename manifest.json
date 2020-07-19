@@ -7,11 +7,11 @@
     ],
     "content_scripts": [{
         "matches": ["https://app.rupee.com.br/dashboard_mundo*"],        
-        "js": ["settings.js", "iterator.js"],
+        "js": ["iterator.js",  "mundi.js"],
         "run_at": "document_end"
     }, {
         "matches": ["https://app.rupee.com.br/dashboard_italia*"],
-        "js": ["settings.js", "iterator.js", "italy.js"],
+        "js": ["iterator.js", "jquery-3.5.1.min.js", "duties_pie_chart.js", "italy.js"],
         "run_at": "document_end"
     }],  
     "browser_action": {
