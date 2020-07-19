@@ -12,7 +12,7 @@ const ITALY_STATUSES = [
 const NEXT_PAGE_DELAY = ITALY_STATUSES.length * 10 * 1000; // 10s de exibicao para cada status;
 
 function update_dashboard_data(status) {
-    console.log(`[rupee-bot] Loading data ${status} card type data;`);
+    console.log(`[rupee-bot] Loading "${status}" card type data;`);
 
     fetch(
         `https://app.rupee.com.br/dashboard_italia/filter_and_update_italy?
