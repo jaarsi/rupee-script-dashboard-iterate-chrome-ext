@@ -2,15 +2,18 @@
     "name": "rupee-script-iterate-mundi-chrome-ext",
     "version": "0.0.1",
     "description": "rupee-script-iterate-mundi-chrome-ext",    
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false      
-    },
     "permissions": [
-        "tabs",
-        "activeTab",        
-        "https://app.rupee.com.br/*"
-    ],  
+        "storage"
+    ],
+    "content_scripts": [{
+        "matches": ["https://app.rupee.com.br/dashboard_mundo*"],        
+        "js": ["settings.js", "iterator.js"],
+        "run_at": "document_end"
+    }, {
+        "matches": ["https://app.rupee.com.br/dashboard_italia*"],
+        "js": ["settings.js", "iterator.js", "italy.js"],
+        "run_at": "document_end"
+    }],  
     "browser_action": {
         "default_title": "rupee-script-iterate-mundi-chrome-ext"
     },
