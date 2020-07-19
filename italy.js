@@ -9,7 +9,11 @@ const ITALY_STATUSES = [
     "attention"
 ];
 
+const NEXT_PAGE_DELAY = ITALY_STATUSES.length * 10 * 1000; // 10s de exibicao para cada status;
+
 function update_dashboard_data(status) {
+    console.log(`[rupee-bot] Loading data ${status} card type data;`);
+
     fetch(
         `https://app.rupee.com.br/dashboard_italia/filter_and_update_italy?
         company_id=all&duty_type=all&status=${status}&duty_name=all`, 
@@ -46,11 +50,13 @@ function update_dashboard_data(status) {
     }));
 }
 
-let status_index = -1;
+let status_index = 0;
+
+update_dashboard_data(ITALY_STATUSES[status_index])
 
 let update_dashboard_interval = setInterval(() => {
     status_index = (status_index+1) % ITALY_STATUSES.length;
     update_dashboard_data(ITALY_STATUSES[status_index]);
-}, iterator.DEFAULT_DELAY/ITALY_STATUSES.length);
+}, NEXT_PAGE_DELAY/ITALY_STATUSES.length);
 
-iterator.next();
+iterator.next(NEXT_PAGE_DELAY);
