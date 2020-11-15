@@ -6,6 +6,7 @@ const iterator = {
         "https://app.rupee.com.br/dashboard_mundo?locale=pt-BR&status=attention",
         "https://app.rupee.com.br/dashboard_mundo?locale=pt-BR&status=delayed",
         "https://app.rupee.com.br/dashboard_italia?locale=pt-BR",
+        "https://app.rupee.com.br/dashboard_cnds?locale=pt-BR",
     ],
     DEFAULT_DELAY: 60000,
     next: function(delay=null) {
